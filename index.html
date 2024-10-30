@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- header section here -->
+     <header>
+        <a href="" class="brand">Clothing</a>
+        <!-- menu-bar for small screen -->
+        <div class="menu-btn">
+
+        </div>
+        <!-- navbar for larger screen -->
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="">Home</a>
+                <!-- <a href="">Pages</a> -->
+                <a href="">Contact</a>
+                <a href="">Shop</a>
+                <a href="./forms/register.html">Register</a>
+            </div>
+        </div>
+     </header>
+     <!-- header component ends here -->
+
+     <!-- body of the landing page starts here -->
+     <section class="home">
+        <video src="vid1.mp4" class="video-slide active" autoplay muted loop></video>
+        <video src="vid2.mp4" class="video-slide" autoplay muted loop></video>
+        <video src="vid3.mp4" class="video-slide" autoplay muted loop></video>
+
+        <div class="content active">
+            <h1>Make your online<br> shopping experiences better</h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate exercitationem ab ipsa facere repellat, aliquam impedit quaerat natus dolorem consequatur. Illo, non? Recusandae nobis suscipit, sequi doloribus veniam earum officiis?
+            </p>
+            <button href="">Explore</button>
+        </div>
+        <div class="content">
+            <h1>Make your online<br> shopping experiences better 2</h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate exercitationem ab ipsa facere repellat, aliquam impedit quaerat natus dolorem consequatur. Illo, non? Recusandae nobis suscipit, sequi doloribus veniam earum officiis?
+            </p>
+            <button href="">Explore</button>
+        </div>
+        <div class="content">
+            <h1>Make your online<br> shopping experiences better 3</h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate exercitationem ab ipsa facere repellat, aliquam impedit quaerat natus dolorem consequatur. Illo, non? Recusandae nobis suscipit, sequi doloribus veniam earum officiis?
+            </p>
+            <button href="">Explore</button>
+        </div>
+
+        <div class="media-icons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <!-- <div class="nav-btn"></div>
+            <div class="nav-btn"></div> -->
+        </div>
+     </section>
+     <!-- body of landing page end here -->
+
+    <!-- use of script tag to register an event for menu-bar to make the nav bar responsive -->
+     <script type="text/javascript">
+        const menuBtn= document.querySelector(".menu-btn");
+        const navigation= document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click",()=>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        })
+
+    // js for video slider
+    const btns = document.querySelectorAll('.nav-btn');
+    const slides = document.querySelectorAll('.video-slide');
+    const contents = document.querySelectorAll('.content');
+
+    var sliderNav = function (manual){
+        btns.forEach((btn)=>{
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide)=>{
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content)=>{
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i)=>{
+        btn.addEventListener("click",()=>{
+            sliderNav(i);
+        });
+    });
+     </script>
+</body>
+</html>

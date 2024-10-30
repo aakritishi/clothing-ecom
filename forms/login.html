@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login Form</title>
+</head>
+
+<body class="flex justify-center md:mt-[5%] mt-[25%] bg-gray-100 w-[90%] mx-auto">
+    <form class="w-full max-w-lg p-8 bg-white rounded-lg shadow-md" method="post" action="login.php">
+        <h2 class="text-2xl font-semibold text-center mb-6">Login Form</h2>
+        
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium">Enter your Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" 
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400" required />
+        </div>
+
+        <div class="mb-4">
+            <label for="password" class="block text-gray-700 font-medium">Enter your Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter your Password" 
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400" required />
+        </div>
+
+        <div class="flex justify-center mb-4">
+            <button type="submit" name="submitted"
+                class="w-full py-2 bg-[#495086] text-white font-semibold rounded-md shadow hover:bg-[#3c4270] focus:outline-none focus:ring focus:ring-blue-300 transition duration-150 ease-in-out">
+                Login
+            </button>
+        </div>
+
+        <div class="mt-1 flex gap-6 items-center justify-center">
+            <p class="text-gray-800 text-lg">Don't have an account?</p><span class="font-medium text-gray-700"><a href="./register.html">Signup Here</a></span>
+        </div>
+    </form>
+</body>
+
+</html>

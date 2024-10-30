@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* header component css start */
+header{
+    z-index: 999;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+    transition: 0.5s ease;
+}
+
+header .brand{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a::before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;   
+}
+
+/* header component css ends here */
+
+/* body component section css starts from here */
+section{
+    padding: 100px 100px;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #0b132b;
+}
+
+.home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(64, 66, 69, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content{
+    z-index:888;
+    color: #fff;
+    width: 65%;
+    display: none;
+}
+
+.home .content.active{
+    display: block;
+}
+
+.home .content h1{
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.home .content p{
+    margin-bottom: 35px;
+}
+
+.home .content button{
+    background: #fff;
+    padding: 10px 15px;
+    font-size: 1em;
+    color:#000;
+    font-weight: 500;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.home .media-icons {
+    z-index: 888;
+    position: absolute;
+    top: 30%; /* Vertically centers the icons */
+    right: 30px; /* Positions the icons to the right */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#000;
+    /* transform: translateY(-50%); Offsets the icons to center them */
+    transition: 0.5s ease;
+}
+
+.home .media-icons a {
+    margin: 10px 0; 
+    display: block;
+    font-size: 1.2em;
+    transition: 0.3s ease;
+    color:white;
+}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+    transform: scale(1.5);
+}
+/* home section css ends here */
+
+/* css for the body slider with videos*/
+.home video{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-navigation{
+    z-index:888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+
+}
+
+.slider-navigation .nav-btn.active{
+    background: #3743a0;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;   
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.video-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+/* use of media query to make the page responsive */
+@media (max-width: 1040px)
+{
+    header{
+        padding: 15px 30px;
+    }
+
+    section{
+        padding: 100px 30px;
+    }
+
+    .home .media-icons{
+        right: 30px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top:0;
+        left:0;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(1, 1, 1, 0.5);
+        /* background-color: aliceblue; */
+    }
+
+    header .navigation .navigation-items a{
+        margin: 20px;
+        font-size: 1.2em;
+        padding:2px
+    }
+
+    header .navigation .navigation-items a:before{
+        background: #fff;
+        height:3px
+    }
+
+    header .navigation.active .navigation-items{
+        background: #495086;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        border-radius:5px;
+        box-shadow:0 5px 25px rgb(1 1 1 / 20%);
+    }
+
+    .menu-btn{
+        background:url(menu.png)no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 50px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .menu-btn.active{
+        z-index: 999;
+        background: url(close.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+        border-radius: 6px;
+    }
+}

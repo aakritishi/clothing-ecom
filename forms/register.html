@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Signup Form</title>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen w-[94%] mx-auto">
+    <form class="w-[94%] mx-auto max-w-lg p-8 bg-white rounded-lg shadow-md" method="post" action="signup.php">
+        <h2 class="text-2xl font-semibold text-center mb-6">Signup Form</h2>
+
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="phone" class="block text-gray-700 font-medium">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="address" class="block text-gray-700 font-medium">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="password" class="block text-gray-700 font-medium">Password:</label>
+            <input type="text" id="password" name="password" placeholder="Enter your password"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="confirm-password" class="block text-gray-700 font-medium">Confirm Password:</label>
+            <input type="text" id="confirm-password" name="confirm-password" placeholder="Re-enter your password"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-400"
+                required>
+        </div>
+
+        <div class="flex justify-center mb-4">
+            <Button type="submit" value="Submit" name="submitted"
+                class="w-full py-2 bg-[#495086] text-white font-semibold rounded-md shadow hover:bg-[#3c4270] focus:outline-none focus:ring focus:ring-blue-300 transition duration-150 ease-in-out">
+                Submit
+            </Button>
+        </div>
+
+        <div class="mt-1 flex gap-6 items-center justify-center">
+            <p class="text-gray-800 text-lg">Already have an account?</p><span class="font-medium text-gray-700"><a href="./login.html">Login Here</a></span>
+        </div>
+    </form>
+</body>
+
+</html>
